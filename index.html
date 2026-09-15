@@ -1,0 +1,125 @@
+
+<!-- saved from url=(0027)https://tohosort.frelia.my/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="shortcut icon" href="https://tohosort.frelia.my/src/assets/yinyang.ico" type="image/x-icon">
+  <link rel="icon" href="https://tohosort.frelia.my/src/assets/yinyang.ico" type="image/x-icon">
+  
+  <meta name="og:site_name" content="Touhou Placecord Sorting">
+  <meta name="og:description" content="A simple website for sorting Hakurei r/place members in a formatted list. (Hunja is killing me tomorrow).">
+  <meta name="og:image" content="./src/assets/banner.png">
+  <title>Placecord Member Sorting</title>
+
+  <link rel="stylesheet" type="text/css" href="./src/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./src/css/styles.css">
+
+  <script src="./src/js/data.js"></script>
+  <script src="./src/js/data/2025-11-30.js"></script>
+
+  <script src="./src/js/html2canvas.min.js"></script>
+  <script src="./src/js/lz-string.min.js"></script>
+  <script src="./src/js/seedrandom.min.js"></script>
+  <script src="./src/js/main.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="progress">
+        <span class="progressbattle"></span>
+        <div class="progressbar">
+            <div class="progressfill"><span class="progresstext"></span></div>
+        </div>
+    </div>
+
+    <div class="sorter">
+        <img src="./src/assets/defaultL.jpg" class="left sort image">
+
+        <div class="starting start button" style="grid-row: span 3; display: block;">Touhou Placecord Member Sorter<br><br>Click to Start!</div>
+        <div class="starting load button" style="grid-row: span 3; display: block;">Load <span></span></div>
+
+        <div class="loading button"><div></div><span>Loading...</span></div>
+
+        <div class="sorting tie button">Tie</div>
+        <div class="sorting undo button">Undo</div>
+        <div class="sorting save button">Save Progress</div>
+
+        <div class="finished save button">Generate Result URL</div>
+        <div class="finished getimg button">Generate Image</div>
+        <div class="finished list button">Generate Text List</div>
+
+        <img src="./src/assets/defaultR.jpg" class="right sort image">
+
+        <div class="left sort text"><p></p></div>
+        <div class="right sort text"><p></p></div>
+
+        <div class="left sort username"><p></p></div>
+        <div class="right sort username"><p></p></div>
+    </div>
+
+    <div class="options">
+
+        <div class="option-group">
+            <div class="large option">
+            <label title="Check this to restrict to certain series.">
+                <input id="cbgroup-series" type="checkbox"> Filter by Series Entry
+            </label>
+            </div>
+            <div class="option-group-children">
+            <div><label title="Goons"><input id="cb-series-1" type="checkbox" checked disabled> Goons</label></div>
+            <div><label title="I guess"><input id="cb-series-2" type="checkbox" checked disabled> VC Gang</label></div>
+            <div><label title="Those who draw, you should too"><input id="cb-series-3" type="checkbox" checked disabled> Artists</label></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="option-group">
+            <div class="large option">
+            <label title="Check this to restrict to characters that appear in certain stages as enemies.">
+                <input id="cbgroup-stage" type="checkbox"> Filter by Continent of Residence
+            </label>
+            </div>
+            <div class="option-group-children">
+            <div><label title="Americas"><input id="cb-am" type="checkbox" checked disabled> Americas</label></div>
+            <div><label title="Europe"><input id="cb-eu" type="checkbox" checked disabled> Europe</label></div>
+            <div><label title="Asia"><input id="cb-as" type="checkbox" checked disabled> Asia</label></div>
+            <div><label title="Poland"><input id="cb-po" type="checkbox" checked disabled> Poland</label></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="option-group standalone-options">
+            <div><label title="Check this to remove alt accounts."><input id="cb-" type="checkbox" checked> Remove Alts</label></div>
+            <div><label title="Check this to remove all members who left."><input id="cb-notonserver" type="checkbox"> Remove Former-Members</label></div>
+        </div>
+
+        </div>
+    <div class="image selector">Display Images on Result: <select></select></div>
+    <div class="time taken"></div>
+    <div class="results"></div>
+
+    <div class="info">
+        <a href="https://relick.me/song/">Song Sorter</a> | <a href="danbooru.donmai.us">Contact</a> | <a href="https://github.com/execfera/charasort/">Source Code</a> | <a href="https://tohosort.frelia.my/?IwVg7ADMCcYMwA5jEQHxMALBBCKuCgmMOWSjNPKJqMOJIdvrsYtJI6c64oepZtyg-lwG96AvpMaUq05oLKdarBdSbKe-IcpaTe7GpWMq2fOuLFHRIrWo76N08cZlbhU+a0-3Ls-SM9RzMdVx9TE2EIp2jZIVUJLwtoqOdUkwddG011HyoxYId3NTdYxXK9CP9igLdbdKyC4MCY9mtHToMmlJD3PvbLawS7FO4NVE4gA">Best Taste</a> | <a class="clearsave">Clear Save Data</a>
+        
+        <br><br>
+
+        <p>Sorter for Touhou Place members. Pick your sources, and hit the Start button.</p>
+        <p><strong>Certain options have details that you can hover to read.</strong></p>
+        <p>Click on the character you like better from the two, or tie them if you like them equally or don't know them.</p>
+        <p>Depending on how many sources you pick, you'll get up to 700+ picks, so set aside a good few cups of tea for this.</p>
+
+        <br><br>
+
+        <p>Keyboard controls during sorting: H/LeftArrow (pick left) J/DownArrow (undo) K/UpArrow (tie) L/RightArrow (pick right) S (save progress).</p>
+        <p>Before sorting: S/Enter (start sorting) L (load progress).
+        </p><p>1/2/3 always correspond to the first/second/third buttons.</p>
+
+        <br><br>
+
+        <p>September 16th, 2026 - Hakurei r/place members added.</p>
+    </div>
+</div>
+
+
+</body></html>
