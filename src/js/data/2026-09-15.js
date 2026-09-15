@@ -1123,7 +1123,7 @@ dataSet[dataSetVersion].characterData = [
   {
 	name: "Endu",
 	username: "littleendu",
-    img: "endu.png",
+    img: "endu.gif",
     opts: {
       series: ["maincorder"],
 	  date: ["22"],
